@@ -1,6 +1,7 @@
 export default function Servicos() {
   return (
-    <section id="servicos">
+    <>
+      <section id="servicos">
       <div className="container">
         <div className="svc-head">
           <div>
@@ -409,7 +410,7 @@ export default function Servicos() {
 </div>
 </footer>
 
-<script dangerouslySetInnerHTML={{ __html: \`
+<script dangerouslySetInnerHTML={{ __html: `
 // ── LOADER ANIMATION
 (function(){
   const loader   = document.getElementById('loader');
@@ -453,11 +454,11 @@ export default function Servicos() {
         const dy = navRect.top  + navRect.height/2 - (logoRect.top  + logoRect.height/2);
 
         logo.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .45s ease .25s';
-        logo.style.transform  = \\\`translate(\\\${dx}px,\\\${dy}px) scale(0.26)\\\`;
+        logo.style.transform  = \`translate(\${dx}px,\${dy}px) scale(0.26)\`;
         logo.style.opacity    = '0';
         if(emblem){
           emblem.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .4s ease .2s';
-          emblem.style.transform  = \\\`translate(\\\${dx - 60}px,\\\${dy}px) scale(0.22)\\\`;
+          emblem.style.transform  = \`translate(\${dx - 60}px,\${dy}px) scale(0.22)\`;
           emblem.style.opacity    = '0';
         }
       }
@@ -500,11 +501,11 @@ window.addEventListener('scroll', ()=>{
       const navEl = document.getElementById('nav');
       if(navEl) navEl.classList.toggle('sc', y > 20);
       const px1 = document.getElementById('px1');
-      if(px1) px1.style.transform = \\\`translateY(\\\${y*.28}px)\\\`;
+      if(px1) px1.style.transform = \`translateY(\${y*.28}px)\`;
       const px2 = document.getElementById('px2');
-      if(px2) px2.style.transform = \\\`translateY(\\\${y*.18}px)\\\`;
+      if(px2) px2.style.transform = \`translateY(\${y*.18}px)\`;
       const px3 = document.getElementById('px3');
-      if(px3) px3.style.transform = \\\`translateY(\\\${y*.35}px)\\\`;
+      if(px3) px3.style.transform = \`translateY(\${y*.35}px)\`;
       scrollTicking = false;
     });
   }
@@ -571,14 +572,14 @@ function buildNodes(){
   orbitData.forEach((item, i)=>{
     const node = document.createElement('div');
     node.className = 'orbit-node';
-    node.id = \\\`onode-\\\${item.id}\\\`;
-    node.innerHTML = \\\`
+    node.id = \`onode-\${item.id}\`;
+    node.innerHTML = \`
       <div className="on-dot">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="\\\${item.icon}"/>
+          <path d="\${item.icon}"/>
         </svg>
       </div>
-      <div className="on-label">\\\${item.label}</div>\\\`;
+      <div className="on-label">\${item.label}</div>\`;
     node.addEventListener('click', ()=>activateNode(item.id));
     nodesContainer.appendChild(node);
   });
@@ -593,7 +594,7 @@ function positionNodes(){
     const rad   = (angle * Math.PI) / 180;
     const x = cx + RADIUS * Math.cos(rad);
     const y = cy + RADIUS * Math.sin(rad);
-    const node = document.getElementById(\\\`onode-\\\${item.id}\\\`);
+    const node = document.getElementById(\`onode-\${item.id}\`);
     if(node){ node.style.left = x+'px'; node.style.top = y+'px'; }
   });
 }
@@ -601,7 +602,7 @@ function positionNodes(){
 function activateNode(id){
   autoRot = false;
   document.querySelectorAll('.orbit-node').forEach(n=>n.classList.remove('active'));
-  const node = document.getElementById(\\\`onode-\\\${id}\\\`);
+  const node = document.getElementById(\`onode-\${id}\`);
   if(node) node.classList.add('active');
   const data = orbitData.find(d=>d.id===id);
   if(!data) return;
@@ -641,6 +642,7 @@ function faq(btn){
   document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
   if(!open) item.classList.add('open');
 }
-\`}} />
+`}} />
+    </>
   )
 }
