@@ -153,3 +153,7 @@ vetta-hub/
 - [ ] Configurar Google Analytics ou Plausible
 - [ ] Criar página `/politica-de-privacidade`
 - [ ] Quando tiver foto: atualizar `/sobre` com imagem real
+
+
+
+
