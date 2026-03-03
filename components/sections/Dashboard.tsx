@@ -1,107 +1,107 @@
 export default function Dashboard() {
   return (
     <section id="scroll-card-section">
-<div className="scroll-card-wrap" id="scroll-card-wrap">
-  <div style="width:100%;max-width:860px;margin:0 auto;padding:0 20px">
-    <div className="scroll-card-title r">
-      <p className="s-label" style="justify-content:center">Dashboard</p>
-      <h2 className="st" style="text-align:center;margin-bottom:8px">Controle real,<br><em>visibilidade total.</em></h2>
-      <p className="ssub" style="text-align:center;margin:0 auto">Cada projeto entregue com painel de acompanhamento em tempo real.</p>
-    </div>
-    <div className="scroll-card-frame" id="scroll-card-frame">
-      <div className="scf-bar">
-        <div className="scf-dot" style="background:#ff5f57"></div>
-        <div className="scf-dot" style="background:#febc2e"></div>
-        <div className="scf-dot" style="background:#28c840"></div>
-        <span style="font-size:12px;color:var(--muted);margin-left:8px">vetta.hub — painel de projetos</span>
-      </div>
-      <div className="scf-body">
-        <div className="scf-grid">
-          <div className="scf-card">
-            <div className="scf-card-label">Projetos ativos</div>
-            <div className="scf-card-val c">12</div>
+      <div className="scroll-card-wrap" id="scroll-card-wrap">
+        <div style={{ width: '100%', maxWidth: '860px', margin: '0 auto', padding: '0 20px' }}>
+          <div className="scroll-card-title r">
+            <p className="s-label" style={{ justifyContent: 'center' }}>Dashboard</p>
+            <h2 className="st" style={{ textAlign: 'center', marginBottom: '8px' }}>Controle real,<br /><em>visibilidade total.</em></h2>
+            <p className="ssub" style={{ textAlign: 'center', margin: '0 auto' }}>Cada projeto entregue com painel de acompanhamento em tempo real.</p>
           </div>
-          <div className="scf-card">
-            <div className="scf-card-label">Uptime médio</div>
-            <div className="scf-card-val">99.9%</div>
-          </div>
-          <div className="scf-card">
-            <div className="scf-card-label">Entregas no prazo</div>
-            <div className="scf-card-val a">100%</div>
+          <div className="scroll-card-frame" id="scroll-card-frame">
+            <div className="scf-bar">
+              <div className="scf-dot" style={{ background: '#ff5f57' }}></div>
+              <div className="scf-dot" style={{ background: '#febc2e' }}></div>
+              <div className="scf-dot" style={{ background: '#28c840' }}></div>
+              <span style={{ fontSize: '12px', color: 'var(--muted)', marginLeft: '8px' }}>vetta.hub — painel de projetos</span>
+            </div>
+            <div className="scf-body">
+              <div className="scf-grid">
+                <div className="scf-card">
+                  <div className="scf-card-label">Projetos ativos</div>
+                  <div className="scf-card-val c">12</div>
+                </div>
+                <div className="scf-card">
+                  <div className="scf-card-label">Uptime médio</div>
+                  <div className="scf-card-val">99.9%</div>
+                </div>
+                <div className="scf-card">
+                  <div className="scf-card-label">Entregas no prazo</div>
+                  <div className="scf-card-val a">100%</div>
+                </div>
+              </div>
+              <div className="scf-chart">
+                <div className="scf-bar-item" style={{ height: '40%' }}></div>
+                <div className="scf-bar-item" style={{ height: '55%' }}></div>
+                <div className="scf-bar-item hi" style={{ height: '70%' }}></div>
+                <div className="scf-bar-item" style={{ height: '50%' }}></div>
+                <div className="scf-bar-item hi" style={{ height: '90%' }}></div>
+                <div className="scf-bar-item" style={{ height: '65%' }}></div>
+                <div className="scf-bar-item hi" style={{ height: '100%' }}></div>
+                <div className="scf-bar-item" style={{ height: '75%' }}></div>
+                <div className="scf-bar-item" style={{ height: '60%' }}></div>
+                <div className="scf-bar-item hi" style={{ height: '85%' }}></div>
+                <div className="scf-bar-item" style={{ height: '45%' }}></div>
+                <div className="scf-bar-item hi" style={{ height: '95%' }}></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="scf-chart">
-          <div className="scf-bar-item" style="height:40%"></div>
-          <div className="scf-bar-item" style="height:55%"></div>
-          <div className="scf-bar-item hi" style="height:70%"></div>
-          <div className="scf-bar-item" style="height:50%"></div>
-          <div className="scf-bar-item hi" style="height:90%"></div>
-          <div className="scf-bar-item" style="height:65%"></div>
-          <div className="scf-bar-item hi" style="height:100%"></div>
-          <div className="scf-bar-item" style="height:75%"></div>
-          <div className="scf-bar-item" style="height:60%"></div>
-          <div className="scf-bar-item hi" style="height:85%"></div>
-          <div className="scf-bar-item" style="height:45%"></div>
-          <div className="scf-bar-item hi" style="height:95%"></div>
+      </div>
+    </section>
+
+{/* ══ FAQ ══ */ }
+  <section id="faq">
+    <div className="container">
+      <div className="faq-wrap">
+        <div className="faq-sticky">
+          <p className="s-label r">Dúvidas</p>
+          <h2 className="st r" data-d="1">Perguntas<br />que todo<br />cliente <em>faz.</em></h2>
+          <p className="ssub r" data-d="2" style={{ marginTop: '20px' }}>Tem outra dúvida? Basta chamar no WhatsApp — respondemos na hora.</p>
+        </div>
+        <div className="r" data-d="3">
+          <div className="faq-item">
+            <button className="faq-btn" onClick="faq(this)">A Vetta atende empresas de qualquer segmento? <span className="faq-ico">+</span></button>
+            <div className="faq-ans">Sim. Nossa especialidade é tecnologia, não um setor específico. Já trabalhamos com comércio, saúde, educação, logística e serviços. O que muda é a solução, não a qualidade da entrega.</div>
+          </div>
+          <div className="faq-item">
+            <button className="faq-btn" onClick="faq(this)">Quanto tempo leva para desenvolver um software sob medida? <span className="faq-ico">+</span></button>
+            <div className="faq-ans">Depende da complexidade. Um sistema simples pode estar em produção em 3–6 semanas. Sistemas mais robustos levam de 2 a 6 meses. O prazo real é definido na proposta, sem chute.</div>
+          </div>
+          <div className="faq-item">
+            <button className="faq-btn" onClick="faq(this)">Como funciona o modelo White Label? <span className="faq-ico">+</span></button>
+            <div className="faq-ans">Você fecha com seu cliente, repassa o briefing para a Vetta e nós desenvolvemos sob a sua marca. O cliente final nunca precisa saber que a Vetta existe — a relação comercial é inteiramente sua.</div>
+          </div>
+          <div className="faq-item">
+            <button className="faq-btn" onClick="faq(this)">Posso contratar apenas consultoria? <span className="faq-ico">+</span></button>
+            <div className="faq-ans">Sim. Oferecemos diagnóstico de TI de forma independente. Muitos clientes começam com consultoria e decidem levar a execução para a Vetta depois — mas não é obrigação.</div>
+          </div>
+          <div className="faq-item">
+            <button className="faq-btn" onClick="faq(this)">O suporte continua após a entrega? <span className="faq-ico">+</span></button>
+            <div className="faq-ans">Sim. Oferecemos planos de suporte e manutenção contínua. Sistemas evoluem, e a Vetta fica ao lado para ajustar, melhorar e garantir que tudo continue funcionando.</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-{/* ══ FAQ ══ */}
-<section id="faq">
-<div className="container">
-  <div className="faq-wrap">
-    <div className="faq-sticky">
-      <p className="s-label r">Dúvidas</p>
-      <h2 className="st r" data-d="1">Perguntas<br>que todo<br>cliente <em>faz.</em></h2>
-      <p className="ssub r" data-d="2" style="margin-top:20px">Tem outra dúvida? Basta chamar no WhatsApp — respondemos na hora.</p>
-    </div>
-    <div className="r" data-d="3">
-      <div className="faq-item">
-        <button className="faq-btn" onClick="faq(this)">A Vetta atende empresas de qualquer segmento? <span className="faq-ico">+</span></button>
-        <div className="faq-ans">Sim. Nossa especialidade é tecnologia, não um setor específico. Já trabalhamos com comércio, saúde, educação, logística e serviços. O que muda é a solução, não a qualidade da entrega.</div>
-      </div>
-      <div className="faq-item">
-        <button className="faq-btn" onClick="faq(this)">Quanto tempo leva para desenvolver um software sob medida? <span className="faq-ico">+</span></button>
-        <div className="faq-ans">Depende da complexidade. Um sistema simples pode estar em produção em 3–6 semanas. Sistemas mais robustos levam de 2 a 6 meses. O prazo real é definido na proposta, sem chute.</div>
-      </div>
-      <div className="faq-item">
-        <button className="faq-btn" onClick="faq(this)">Como funciona o modelo White Label? <span className="faq-ico">+</span></button>
-        <div className="faq-ans">Você fecha com seu cliente, repassa o briefing para a Vetta e nós desenvolvemos sob a sua marca. O cliente final nunca precisa saber que a Vetta existe — a relação comercial é inteiramente sua.</div>
-      </div>
-      <div className="faq-item">
-        <button className="faq-btn" onClick="faq(this)">Posso contratar apenas consultoria? <span className="faq-ico">+</span></button>
-        <div className="faq-ans">Sim. Oferecemos diagnóstico de TI de forma independente. Muitos clientes começam com consultoria e decidem levar a execução para a Vetta depois — mas não é obrigação.</div>
-      </div>
-      <div className="faq-item">
-        <button className="faq-btn" onClick="faq(this)">O suporte continua após a entrega? <span className="faq-ico">+</span></button>
-        <div className="faq-ans">Sim. Oferecemos planos de suporte e manutenção contínua. Sistemas evoluem, e a Vetta fica ao lado para ajustar, melhorar e garantir que tudo continue funcionando.</div>
+  {/* ══ CTA ══ */ }
+  <section id="contato">
+    <div className="container">
+      <div className="cta-box r">
+        <h2>Pronto para parar de<br><em>improvisar em TI?</em></h2>
+        <p>Agende um diagnóstico gratuito. Em 30 minutos, você sai com clareza sobre o próximo passo tecnológico da sua empresa.</p>
+        <div className="cta-row">
+          <input className="cta-in" type="text" placeholder="Seu nome" />
+          <input className="cta-in" type="text" placeholder="WhatsApp ou e-mail" />
+          <a href="https://wa.me/5573982330065" target="_blank" className="btn-primary">Quero meu diagnóstico →</a>
+        </div>
+        <p className="cta-or">Prefere falar direto? <a href="https://wa.me/5573982330065" target="_blank">Chamar no WhatsApp →</a></p>
       </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-{/* ══ CTA ══ */}
-<section id="contato">
-<div className="container">
-  <div className="cta-box r">
-    <h2>Pronto para parar de<br><em>improvisar em TI?</em></h2>
-    <p>Agende um diagnóstico gratuito. Em 30 minutos, você sai com clareza sobre o próximo passo tecnológico da sua empresa.</p>
-    <div className="cta-row">
-      <input className="cta-in" type="text" placeholder="Seu nome" />
-      <input className="cta-in" type="text" placeholder="WhatsApp ou e-mail" />
-      <a href="https://wa.me/5573982330065" target="_blank" className="btn-primary">Quero meu diagnóstico →</a>
-    </div>
-    <p className="cta-or">Prefere falar direto? <a href="https://wa.me/5573982330065" target="_blank">Chamar no WhatsApp →</a></p>
-  </div>
-</div>
-</section>
-
-{/* ══ FOOTER ══ */}
+  {/* ══ FOOTER ══ */ }
 <footer>
 <div className="container">
   <div className="ft">
@@ -116,7 +116,7 @@ export default function Dashboard() {
 </div>
 </footer>
 
-<script>
+<script dangerouslySetInnerHTML={{ __html: \`
 // ── LOADER ANIMATION
 (function(){
   const loader   = document.getElementById('loader');
@@ -155,11 +155,11 @@ export default function Dashboard() {
       const dy = navRect.top  + navRect.height/2 - (logoRect.top  + logoRect.height/2);
 
       logo.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .45s ease .25s';
-      logo.style.transform  = `translate(${dx}px,${dy}px) scale(0.26)`;
+      logo.style.transform  = \\\`translate(\\\${dx}px,\\\${dy}px) scale(0.26)\\\`;
       logo.style.opacity    = '0';
       if(emblem){
         emblem.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .4s ease .2s';
-        emblem.style.transform  = `translate(${dx - 60}px,${dy}px) scale(0.22)`;
+        emblem.style.transform  = \\\`translate(\\\${dx - 60}px,\\\${dy}px) scale(0.22)\\\`;
         emblem.style.opacity    = '0';
       }
 
@@ -197,9 +197,9 @@ window.addEventListener('scroll', ()=>{
     requestAnimationFrame(()=>{
       const y = scrollY;
       document.getElementById('nav').classList.toggle('sc', y > 20);
-      document.getElementById('px1').style.transform = `translateY(${y*.28}px)`;
-      document.getElementById('px2').style.transform = `translateY(${y*.18}px)`;
-      document.getElementById('px3').style.transform = `translateY(${y*.35}px)`;
+      document.getElementById('px1').style.transform = \\\`translateY(\\\${y*.28}px)\\\`;
+      document.getElementById('px2').style.transform = \\\`translateY(\\\${y*.18}px)\\\`;
+      document.getElementById('px3').style.transform = \\\`translateY(\\\${y*.35}px)\\\`;
       scrollTicking = false;
     });
   }
@@ -264,14 +264,14 @@ function buildNodes(){
   orbitData.forEach((item, i)=>{
     const node = document.createElement('div');
     node.className = 'orbit-node';
-    node.id = `onode-${item.id}`;
-    node.innerHTML = `
+    node.id = \\\`onode-\\\${item.id}\\\`;
+    node.innerHTML = \\\`
       <div className="on-dot">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="${item.icon}"/>
+          <path d="\\\${item.icon}"/>
         </svg>
       </div>
-      <div className="on-label">${item.label}</div>`;
+      <div className="on-label">\\\${item.label}</div>\\\`;
     node.addEventListener('click', ()=>activateNode(item.id));
     nodesContainer.appendChild(node);
   });
@@ -285,7 +285,7 @@ function positionNodes(){
     const rad   = (angle * Math.PI) / 180;
     const x = cx + RADIUS * Math.cos(rad);
     const y = cy + RADIUS * Math.sin(rad);
-    const node = document.getElementById(`onode-${item.id}`);
+    const node = document.getElementById(\\\`onode-\\\${item.id}\\\`);
     if(node){ node.style.left = x+'px'; node.style.top = y+'px'; }
   });
 }
@@ -293,7 +293,7 @@ function positionNodes(){
 function activateNode(id){
   autoRot = false;
   document.querySelectorAll('.orbit-node').forEach(n=>n.classList.remove('active'));
-  const node = document.getElementById(`onode-${id}`);
+  const node = document.getElementById(\\\`onode-\\\${id}\\\`);
   if(node) node.classList.add('active');
   const data = orbitData.find(d=>d.id===id);
   if(!data) return;
@@ -329,6 +329,6 @@ function faq(btn){
   document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
   if(!open) item.classList.add('open');
 }
-</script>
+\`}} />
   )
 }

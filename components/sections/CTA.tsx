@@ -3,7 +3,7 @@ export default function CTA() {
     <section id="contato">
 <div className="container">
   <div className="cta-box r">
-    <h2>Pronto para parar de<br><em>improvisar em TI?</em></h2>
+    <h2>Pronto para parar de<br /><em>improvisar em TI?</em></h2>
     <p>Agende um diagnóstico gratuito. Em 30 minutos, você sai com clareza sobre o próximo passo tecnológico da sua empresa.</p>
     <div className="cta-row">
       <input className="cta-in" type="text" placeholder="Seu nome" />
