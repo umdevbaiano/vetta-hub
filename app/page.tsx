@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Loader from '@/components/Loader'
 import Nav from '@/components/Nav'
+import { SectionDivider } from '@/components/SectionDivider'
 import Hero from '@/components/sections/Hero'
 import Ecossistema from '@/components/sections/Ecossistema'
 import Servicos from '@/components/sections/Servicos'
@@ -78,18 +79,55 @@ export default function Home() {
       <div id="curR" />
       <Nav />
       <main>
+        {/* Hero — void (#06041A) */}
         <Hero />
+
+        <SectionDivider />
+        {/* Ecossistema — deep (#0D0A28) */}
         <Ecossistema />
+
+        <SectionDivider flip />
+        {/* Serviços — void (#06041A) */}
         <Servicos />
+
+        <SectionDivider />
+        {/* Cases — deep (#0D0A28) */}
         <Cases />
+
+        <SectionDivider flip />
+        {/* Processo — void (#06041A) */}
         <ComoFunciona />
+
+        <SectionDivider />
+        {/* Sobre — deep (#0D0A28) */}
         <SobreTeaser />
+
+        <SectionDivider flip />
+        {/* Para Quem — void (#06041A) */}
         <ParaQuem />
+
+        <SectionDivider />
+        {/* Infra — deep (#0D0A28) */}
         <InfraVisual />
+
+        <SectionDivider flip />
+        {/* Orbital — void (#06041A) */}
         <EcossistemaOrbital />
+
+        <SectionDivider />
+        {/* Dashboard — deep (#0D0A28) */}
         <Dashboard />
+
+        <SectionDivider flip />
+        {/* Stack — void (#06041A) */}
         <Stack />
+
+        <SectionDivider />
+        {/* FAQ — deep (#0D0A28) */}
         <FAQ />
+
+        <SectionDivider flip />
+        {/* CTA — void (#06041A) with mesh gradient */}
         <CTA />
       </main>
       <Footer />

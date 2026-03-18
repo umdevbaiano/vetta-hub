@@ -101,7 +101,7 @@
 
 
 /* ── ORBITAL TIMELINE ── */
-#ecossistema-orbital { padding:140px 0; background:var(--deep); overflow:hidden; }
+#ecossistema-orbital { padding:140px 0; background:var(--void); overflow:hidden; }
 #ecossistema-orbital::before,
 #ecossistema-orbital::after { content:''; position:absolute; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(124,58,237,.12),transparent); }
 #ecossistema-orbital::before { top:0; }
@@ -183,7 +183,7 @@
 .od-desc { font-size:13px; color:var(--gray); line-height:1.65; }
 
 /* ── SCROLL CARD ── */
-#scroll-card-section { position:relative; background:var(--void); padding:100px 0; }
+#scroll-card-section { position:relative; background:var(--deep); padding:100px 0; }
 .scroll-card-wrap { display:flex; align-items:center; justify-content:center; }
 .scroll-card-title { text-align:center; margin-bottom:40px; }
 .scroll-card-frame {
@@ -283,7 +283,7 @@ h2.st em { font-style:normal; color:var(--v400); }
 .tw-cursor { display:none; }
 
 /* ── ECOSYSTEM ── */
-#ecossistema { padding:140px 0; }
+#ecossistema { padding:140px 0; background:var(--deep); }
 .eco-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:72px; }
 .eco-layers { display:grid; grid-template-columns:repeat(5,1fr); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
 .eco-layer { padding:36px 22px; border-right:1px solid var(--border); transition:background .3s; }
@@ -295,7 +295,7 @@ h2.st em { font-style:normal; color:var(--v400); }
 .eco-layer p { font-size:12px; color:var(--gray2); line-height:1.6; }
 
 /* ── SERVICES ── */
-#servicos { padding:140px 0; background:var(--deep); }
+#servicos { padding:140px 0; background:var(--void); }
 #servicos::before,#servicos::after { content:''; position:absolute; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(124,58,237,.12),transparent); }
 #servicos::before { top:0; }
 #servicos::after  { bottom:0; }
@@ -344,7 +344,7 @@ h2.st em { font-style:normal; color:var(--v400); }
 .proc-step p { font-size:13px; color:var(--gray); line-height:1.65; }
 
 /* ── FOR WHOM ── */
-#para-quem { padding:140px 0; background:var(--deep); }
+#para-quem { padding:140px 0; background:var(--void); }
 #para-quem::before,#para-quem::after { content:''; position:absolute; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(124,58,237,.12),transparent); }
 #para-quem::before { top:0; }
 #para-quem::after  { bottom:0; }
@@ -419,7 +419,7 @@ h2.st em { font-style:normal; color:var(--v400); }
 .st-divider { width:1px; height:48px; background:var(--border); margin:0 16px; }
 
 /* ── FAQ ── */
-#faq { padding:140px 0; }
+#faq { padding:140px 0; background:var(--deep); }
 .faq-wrap { display:grid; grid-template-columns:1fr 1.5fr; gap:80px; align-items:start; }
 .faq-sticky { position:sticky; top:100px; }
 .faq-item { border-top:1px solid var(--border); }
