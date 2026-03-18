@@ -692,11 +692,11 @@ footer { border-top:1px solid var(--border); padding:36px 0; }
   font-size:14px; font-weight:700; color:var(--white);
 }
 
-/* ── SMOOTH SECTION TRANSITIONS ── */
-section::before {
-  content:''; position:absolute; top:0; left:0; right:0;
-  height:80px; pointer-events:none; z-index:1;
-}
+/* ── SECTION GRADIENT TRANSITIONS (Apple-style) ── */
+.section-fade-dark { background: linear-gradient(to bottom, #06041A 0%, #0D0A28 100%); }
+.section-fade-surface { background: linear-gradient(to bottom, #0D0A28 0%, #151130 100%); }
+.section-fade-void { background: linear-gradient(to bottom, #151130 0%, #06041A 100%); }
+.no-underline { text-decoration: none !important; }
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){

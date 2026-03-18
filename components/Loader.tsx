@@ -28,7 +28,7 @@ export default function Loader() {
       if (ringWrap) { (ringWrap as HTMLElement).style.transition = 'opacity .3s ease'; (ringWrap as HTMLElement).style.opacity = '0' }
 
       setTimeout(() => {
-        const navLogo = document.querySelector('.nav-logo') as HTMLElement
+        const navLogo = document.querySelector('.nav-logo, nav a') as HTMLElement
         if (!navLogo) return
         const navRect = navLogo.getBoundingClientRect()
         const logoRect = logo.getBoundingClientRect()
@@ -46,7 +46,6 @@ export default function Loader() {
           loader.style.display = 'none'
           document.body.style.overflow = ''
           nav.classList.add('sc')
-          document.querySelectorAll('#hero .r').forEach(el => el.classList.add('v'))
         }, 1000)
       }, 350)
     }, 2700)
@@ -56,9 +55,9 @@ export default function Loader() {
     <div id="loader">
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
         <img
-          src="/logo-white.png"
+          src="/images/vetta-logo-white.png"
           alt="Vetta"
-          style={{ width: '72px', height: '72px', objectFit: 'contain' }}
+          style={{ width: '72px', height: '72px', objectFit: 'contain', mixBlendMode: 'screen' }}
         />
         <div className="loader-logo" id="loader-logo">VETTA<em>.</em></div>
       </div>

@@ -1,103 +1,113 @@
-'use client'
-
 export default function Cases() {
   return (
-    <section id="cases">
-      <div className="container">
-        <p className="s-label r">Resultados Reais</p>
-        <h2 className="st r" data-d="1">Cases que <em>entregamos.</em></h2>
+    <section id="cases" className="section-fade-void py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] mb-4">Resultados Reais</p>
+          <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[0.08em] text-[#FAF9FF]">
+            CASES QUE <span className="text-[#A78BFA]">ENTREGAMOS.</span>
+          </h2>
+        </div>
 
-        {/* Case 1 — NF-e */}
-        <div className="case-card r" data-d="2">
-          <div className="case-text">
-            <span className="case-tag">Cliente externo</span>
-            <h3>EMISSOR NF-E AUTOMATIZADO</h3>
-            <p>
-              Sistema de emissão de notas fiscais integrado ao ERP do cliente.
-              Redução de 90% no tempo de emissão com validação automática junto à SEFAZ.
+        {/* Case 1 — NF-e (texto esquerda, terminal direita) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20 border-b border-[rgba(124,58,237,0.12)]">
+          <div>
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] border border-[rgba(217,70,239,0.3)] px-3 py-1 rounded inline-block mb-6">
+              Cliente externo · Entregue
+            </span>
+            <h3 className="font-display font-bold text-3xl md:text-4xl tracking-wider text-[#FAF9FF] mb-5 leading-tight">
+              EMISSOR NF-E AUTOMATIZADO
+            </h3>
+            <p className="font-body font-light text-[#9488C5] leading-relaxed mb-8 text-lg">
+              Sistema completo de emissão de notas fiscais integrado ao ERP do cliente.
+              Redução de 90% no tempo de emissão com validação automática junto à SEFAZ,
+              geração de DANFE e gestão de certificados digitais A1/A3.
             </p>
-            <div className="case-pills">
-              {['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'].map(t => (
-                <span key={t} className="case-pill">{t}</span>
+            <div className="flex flex-wrap gap-2">
+              {['Python','FastAPI','PostgreSQL','Redis','Docker','C#','.NET','Java','Spring Boot'].map(t => (
+                <span key={t} className="font-mono text-[11px] px-2.5 py-1 rounded bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)] text-[#C4B5FD]">
+                  {t}
+                </span>
               ))}
             </div>
           </div>
-          <div className="case-mockup">
-            <div className="terminal">
-              <div className="terminal-bar">
-                <div className="terminal-dot" style={{ background: '#ff5f57' }} />
-                <div className="terminal-dot" style={{ background: '#ffbd2e' }} />
-                <div className="terminal-dot" style={{ background: '#28c840' }} />
-              </div>
-              <div className="terminal-body">
-                <div><span style={{ color: '#D946EF' }}>POST</span> <span style={{ color: '#9488C5' }}>/api/nfe/emitir</span></div>
-                <div style={{ color: '#5B5080' }}>{'{'}</div>
-                <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;cnpj&quot;: <span style={{ color: '#A78BFA' }}>&quot;65.434.389/0001-29&quot;</span>,</div>
-                <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;valor&quot;: <span style={{ color: '#A78BFA' }}>3000.00</span>,</div>
-                <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;status&quot;: <span style={{ color: '#28c840' }}>&quot;AUTORIZADA&quot;</span></div>
-                <div style={{ color: '#5B5080' }}>{'}'}</div>
-                <div style={{ marginTop: '12px', color: '#28c840' }}>✓ NF-e 000.001.234 emitida com sucesso</div>
-              </div>
+
+          {/* Terminal mockup */}
+          <div className="bg-[#0D0A28] rounded-2xl border border-[rgba(124,58,237,0.2)] p-6 shadow-[0_0_80px_rgba(124,58,237,0.08)]">
+            <div className="flex gap-1.5 mb-5">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+              <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+            </div>
+            <div className="font-mono text-sm space-y-1">
+              <p className="text-[#9488C5]">
+                <span className="text-[#D946EF]">POST</span>
+                <span className="text-[#FAF9FF]"> /api/nfe/emitir</span>
+              </p>
+              <p className="text-[#5B5080]">{'{'}</p>
+              <p className="text-[#5B5080] ml-4">&quot;cnpj&quot;: <span className="text-[#A78BFA]">&quot;65.434.389/0001-29&quot;</span>,</p>
+              <p className="text-[#5B5080] ml-4">&quot;valor&quot;: <span className="text-[#A78BFA]">3000.00</span>,</p>
+              <p className="text-[#5B5080] ml-4">&quot;status&quot;: <span className="text-[#28c840]">&quot;AUTORIZADA&quot;</span></p>
+              <p className="text-[#5B5080]">{'}'}</p>
+              <p className="mt-3 text-[#28c840]">✓ NF-e 000.001.234 emitida com sucesso</p>
+              <p className="text-[#5B5080] text-xs">Tempo de resposta: <span className="text-[#A78BFA]">312ms</span></p>
             </div>
           </div>
         </div>
 
-        {/* Case 2 — Insane App (invertido) */}
-        <div className="case-card case-card-flip r" data-d="3">
-          <div className="case-mockup">
-            <div className="app-mockup">
-              <div className="app-status-bar">
-                <span>insane.app</span>
-                <div className="app-signal">
-                  <div className="signal-dot" />
-                  <div className="signal-dot" style={{ opacity: 0.6 }} />
-                  <div className="signal-dot" style={{ opacity: 0.3 }} />
-                </div>
+        {/* Case 2 — Insane App (visual esquerda, texto direita — INVERTIDO) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-20">
+          {/* Dashboard mockup fitness */}
+          <div className="bg-[#0D0A28] rounded-2xl border border-[rgba(124,58,237,0.2)] p-6 shadow-[0_0_80px_rgba(124,58,237,0.08)] order-2 lg:order-1">
+            <div className="flex gap-1.5 mb-5">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+              <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+            </div>
+            <div className="font-mono text-xs text-[#5B5080] mb-3">insane.app — dashboard</div>
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="bg-[rgba(124,58,237,0.12)] rounded-lg p-3 text-center">
+                <div className="text-[#A78BFA] font-display font-bold text-xl">2.4k</div>
+                <div className="text-[#5B5080] font-mono text-[10px] mt-1">USUÁRIOS</div>
               </div>
-              {[
-                { user: 'carlos_fit', action: 'completou treino', time: '2min', pts: '+120pts' },
-                { user: 'ana_strong', action: 'novo recorde pessoal', time: '8min', pts: '+85pts' },
-                { user: 'rafa_gym', action: 'sequência de 30 dias', time: '15min', pts: '+200pts' },
-              ].map((item, i) => (
-                <div key={i} className="feed-item">
-                  <div className="feed-avatar" />
-                  <div className="feed-info">
-                    <span className="feed-user">{item.user}</span>
-                    <span className="feed-action">{item.action}</span>
-                  </div>
-                  <div className="feed-meta">
-                    <span className="feed-pts">{item.pts}</span>
-                    <span className="feed-time">{item.time}</span>
-                  </div>
-                </div>
-              ))}
-              <div className="app-stats">
-                <div className="app-stat">
-                  <span className="app-stat-val" style={{ color: '#A78BFA' }}>2.4k</span>
-                  <span className="app-stat-label">usuários</span>
-                </div>
-                <div className="app-stat">
-                  <span className="app-stat-val" style={{ color: '#D946EF' }}>380</span>
-                  <span className="app-stat-label">treinos/dia</span>
-                </div>
-                <div className="app-stat">
-                  <span className="app-stat-val" style={{ color: '#28c840' }}>99.9%</span>
-                  <span className="app-stat-label">uptime</span>
-                </div>
+              <div className="bg-[rgba(124,58,237,0.12)] rounded-lg p-3 text-center">
+                <div className="text-[#D946EF] font-display font-bold text-xl">380</div>
+                <div className="text-[#5B5080] font-mono text-[10px] mt-1">TREINOS/DIA</div>
+              </div>
+              <div className="bg-[rgba(124,58,237,0.12)] rounded-lg p-3 text-center">
+                <div className="text-[#28c840] font-display font-bold text-xl">99.9%</div>
+                <div className="text-[#5B5080] font-mono text-[10px] mt-1">UPTIME</div>
               </div>
             </div>
+            <div className="flex items-end gap-1 h-16">
+              {[40,65,45,80,55,90,70,85,60,75,50,95,65,80,70].map((h,i) => (
+                <div key={i} className="flex-1 rounded-sm bg-[#7C3AED]" style={{height:`${h}%`,opacity:0.6+i*0.02}} />
+              ))}
+            </div>
+            <div className="mt-2 flex justify-between font-mono text-[10px] text-[#5B5080]">
+              <span>1 Mar</span><span>Hoje</span>
+            </div>
           </div>
-          <div className="case-text">
-            <span className="case-tag">Cliente externo</span>
-            <h3>INSANE APP</h3>
-            <p>
+
+          {/* Texto */}
+          <div className="order-1 lg:order-2">
+            <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] border border-[rgba(217,70,239,0.3)] px-3 py-1 rounded inline-block mb-6">
+              Cliente externo · Em desenvolvimento ativo
+            </span>
+            <h3 className="font-display font-bold text-3xl md:text-4xl tracking-wider text-[#FAF9FF] mb-5 leading-tight">
+              INSANE APP
+            </h3>
+            <p className="font-body font-light text-[#9488C5] leading-relaxed mb-8 text-lg">
               Rede social e plataforma de acompanhamento de treinos focada em comunidade fitness.
               Backend completo com feed social, sistema de autenticação, tracking de treinos,
-              perfis de atletas e integração com app mobile.
+              perfis de atletas e integração com app mobile. Arquitetura orientada a performance
+              com cache distribuído para suportar crescimento acelerado de usuários.
             </p>
-            <div className="case-pills">
-              {['Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker'].map(t => (
-                <span key={t} className="case-pill">{t}</span>
+            <div className="flex flex-wrap gap-2">
+              {['React Native','Node.js','TypeScript','Python','PostgreSQL','MongoDB','Redis','Docker'].map(t => (
+                <span key={t} className="font-mono text-[11px] px-2.5 py-1 rounded bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)] text-[#C4B5FD]">
+                  {t}
+                </span>
               ))}
             </div>
           </div>

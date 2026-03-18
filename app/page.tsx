@@ -5,15 +5,13 @@ import Loader from '@/components/Loader'
 import Nav from '@/components/Nav'
 import Hero from '@/components/sections/Hero'
 import Ecossistema from '@/components/sections/Ecossistema'
+import Stats from '@/components/sections/Stats'
 import Servicos from '@/components/sections/Servicos'
 import Cases from '@/components/sections/Cases'
 import ComoFunciona from '@/components/sections/ComoFunciona'
 import SobreTeaser from '@/components/sections/SobreTeaser'
 import ParaQuem from '@/components/sections/ParaQuem'
 import InfraVisual from '@/components/sections/InfraVisual'
-import EcossistemaOrbital from '@/components/sections/EcossistemaOrbital'
-import Dashboard from '@/components/sections/Dashboard'
-import Stack from '@/components/sections/Stack'
 import FAQ from '@/components/sections/FAQ'
 import CTA from '@/components/sections/CTA'
 import Footer from '@/components/Footer'
@@ -79,17 +77,15 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Ecossistema />
+        <section className="section-fade-dark"><Ecossistema /></section>
+        <Stats />
         <Servicos />
         <Cases />
-        <ComoFunciona />
-        <SobreTeaser />
-        <ParaQuem />
-        <InfraVisual />
-        <EcossistemaOrbital />
-        <Dashboard />
-        <Stack />
-        <FAQ />
+        <section className="section-fade-dark"><ComoFunciona /></section>
+        <section className="section-fade-surface"><SobreTeaser /></section>
+        <section className="section-fade-void"><ParaQuem /></section>
+        <section className="section-fade-dark"><InfraVisual /></section>
+        <section className="section-fade-surface"><FAQ /></section>
         <CTA />
       </main>
       <Footer />
