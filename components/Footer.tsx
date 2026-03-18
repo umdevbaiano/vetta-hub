@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { LogoEmblem } from './LogoEmblem'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer>
       <div className="container">
         <div className="ft">
-          <Link href="/" className="f-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <LogoEmblem size={18} color="var(--v600)" />
-            Vetta<em style={{ fontStyle: 'normal', color: 'var(--v600)' }}>.</em>
+          <Link href="/" className="f-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+            <Image src="/logo-purple.png" alt="Vetta" width={22} height={22} />
+            <span>Vetta<em style={{ fontStyle: 'normal', color: 'var(--v600)' }}>.</em></span>
           </Link>
           <span className="f-copy">© 2026 VettaHub Tecnologia · Jequié, BA</span>
           <div className="f-links">

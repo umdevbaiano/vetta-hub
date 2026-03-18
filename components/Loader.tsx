@@ -6,7 +6,6 @@ export default function Loader() {
   useEffect(() => {
     const loader = document.getElementById('loader')
     const logo = document.getElementById('loader-logo')
-    const emblem = document.getElementById('loader-emblem')
     const tagline = document.getElementById('loader-tagline')
     const ringWrap = document.getElementById('loader-ring')
     const lrFill = document.getElementById('lr-fill')
@@ -16,7 +15,6 @@ export default function Loader() {
     document.body.style.overflow = 'hidden'
 
     requestAnimationFrame(() => {
-      if (emblem) { (emblem as HTMLElement).style.opacity = '1'; (emblem as HTMLElement).style.transform = 'scale(1)' }
       logo.classList.add('show')
       setTimeout(() => { tagline?.classList.add('show') }, 400)
       setTimeout(() => {
@@ -41,12 +39,6 @@ export default function Loader() {
         logo.style.transform = `translate(${dx}px,${dy}px) scale(0.26)`
         logo.style.opacity = '0'
 
-        if (emblem) {
-          (emblem as HTMLElement).style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .4s ease .2s';
-          (emblem as HTMLElement).style.transform = `translate(${dx - 60}px,${dy}px) scale(0.22)`;
-          (emblem as HTMLElement).style.opacity = '0'
-        }
-
         loader.style.transition = 'opacity .55s ease .3s'
         loader.style.opacity = '0'
 
@@ -63,31 +55,11 @@ export default function Loader() {
   return (
     <div id="loader">
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
-        <svg
-          id="loader-emblem"
-          width="72" height="72"
-          viewBox="-50 -56 160 116"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ opacity: 0, transform: 'scale(.9)', transition: 'opacity .7s ease, transform .7s ease' }}
-        >
-          <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="#FAF9FF" strokeWidth="1" opacity={0.1} />
-          <polyline points="0,-44 38,-22 38,22 0,44" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="0,-44 -38,-22" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
-          <polyline points="-38,22 0,44" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
-          <polyline points="-38,-22 -38,22" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.12} />
-          <line x1="0" y1="-44" x2="38" y2="22" stroke="#7C3AED" strokeWidth="1.2" opacity={0.25} />
-          <line x1="0" y1="-44" x2="0" y2="44" stroke="#7C3AED" strokeWidth="1.2" opacity={0.18} />
-          <line x1="38" y1="-22" x2="-38" y2="22" stroke="#7C3AED" strokeWidth="1.2" opacity={0.12} />
-          <circle cx="0" cy="-44" r="4.5" fill="#7C3AED" />
-          <circle cx="38" cy="-22" r="4.5" fill="#7C3AED" />
-          <circle cx="38" cy="22" r="4.5" fill="#7C3AED" />
-          <circle cx="0" cy="44" r="4.5" fill="#7C3AED" />
-          <circle cx="-38" cy="-22" r="4.5" fill="#7C3AED" opacity={0.22} />
-          <circle cx="-38" cy="22" r="4.5" fill="#7C3AED" opacity={0.22} />
-          <circle cx="0" cy="0" r="9" fill="none" stroke="#D946EF" strokeWidth="2" opacity={0.4} />
-          <circle cx="0" cy="0" r="4" fill="#D946EF" />
-        </svg>
+        <img
+          src="/logo-white.png"
+          alt="Vetta"
+          style={{ width: '72px', height: '72px', objectFit: 'contain' }}
+        />
         <div className="loader-logo" id="loader-logo">VETTA<em>.</em></div>
       </div>
       <div className="loader-tagline" id="loader-tagline">Ecossistema Tech Completo</div>

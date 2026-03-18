@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { LogoEmblem } from './LogoEmblem'
+import Image from 'next/image'
 
 export default function Nav() {
   return (
     <nav id="nav">
       <Link href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-        <LogoEmblem size={26} color="var(--v600)" />
+        <Image src="/logo-white.png" alt="Vetta" width={28} height={28} priority />
         <span style={{ fontFamily: "var(--font-syncopate, 'Syncopate'), sans-serif", fontSize: '16px', color: 'var(--white)', letterSpacing: '.06em', textTransform: 'uppercase' as const }}>
           Vetta<em style={{ fontStyle: 'normal', color: 'var(--v600)' }}>.</em>
         </span>

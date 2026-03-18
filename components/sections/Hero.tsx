@@ -9,53 +9,101 @@ export default function Hero() {
         playsInline
         preload="none"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.2,
+        }}
       >
         <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay com gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#06041A]/60 via-[#06041A]/80 to-[#06041A]" />
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to bottom, rgba(6,4,26,0.6), rgba(6,4,26,0.8), #06041A)',
+      }} />
 
-      {/* Radial glow no centro */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                    w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(124,58,237,0.25) 0%, transparent 70%)',
-        }}
-      />
+      {/* Radial glow */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '600px',
+        height: '600px',
+        borderRadius: '50%',
+        background: 'radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
 
       {/* Conteúdo */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6">
-        <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] mb-6">
+      <div style={{
+        position: 'relative',
+        zIndex: 10,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: '0 24px',
+      }}>
+        <span style={{
+          fontFamily: "var(--font-jetbrains, 'JetBrains Mono'), monospace",
+          fontSize: '10px',
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase' as const,
+          color: '#D946EF',
+          marginBottom: '24px',
+        }}>
           Ecossistema Tech Completo
         </span>
-        <h1 className="font-display font-bold text-5xl md:text-7xl tracking-[0.1em] text-[#FAF9FF] mb-6 leading-tight">
+        <h1 style={{
+          fontFamily: "var(--font-syncopate, 'Syncopate'), sans-serif",
+          fontWeight: 700,
+          fontSize: 'clamp(36px, 7vw, 80px)',
+          letterSpacing: '0.1em',
+          color: '#FAF9FF',
+          marginBottom: '24px',
+          lineHeight: 1.05,
+          textTransform: 'uppercase' as const,
+        }}>
           DO SITE AO<br />
-          <span className="bg-gradient-to-r from-[#A78BFA] to-[#D946EF] bg-clip-text text-transparent">
+          <span style={{
+            background: 'linear-gradient(to right, #A78BFA, #D946EF)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
             SERVIDOR,
           </span>
           <br />
           TUDO JUNTO.
         </h1>
-        <p className="font-body font-light text-lg text-[#9488C5] max-w-xl mb-10">
+        <p style={{
+          fontFamily: "var(--font-exo2, 'Exo 2'), sans-serif",
+          fontWeight: 300,
+          fontSize: '18px',
+          color: '#9488C5',
+          maxWidth: '520px',
+          marginBottom: '40px',
+        }}>
           A Vetta é o parceiro técnico que sua empresa precisa para crescer sem travar.
         </p>
-        <div className="flex gap-4">
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
           <a
             href="https://wa.me/5573982330065"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-[#7C3AED] hover:bg-[#8B5CF6] text-white font-semibold
-                       rounded-lg transition-all duration-200 font-body"
+            className="btn-hero-primary"
           >
             Agendar diagnóstico
           </a>
           <a
             href="#servicos"
-            className="px-8 py-3 border border-[rgba(124,58,237,0.38)] text-[#C4B5FD]
-                       hover:bg-[rgba(124,58,237,0.1)] rounded-lg transition-all duration-200 font-body"
+            className="btn-hero-ghost"
           >
             Ver soluções →
           </a>
