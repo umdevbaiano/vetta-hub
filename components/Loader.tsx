@@ -55,8 +55,6 @@ export default function Loader() {
           document.body.style.overflow = ''
           nav.classList.add('sc')
           document.querySelectorAll('#hero .r').forEach(el => el.classList.add('v'))
-          // start typewriter
-          setTimeout(() => startTypewriter(), 1800)
         }, 1000)
       }, 350)
     }, 2700)
@@ -73,24 +71,24 @@ export default function Loader() {
           xmlns="http://www.w3.org/2000/svg"
           style={{ opacity: 0, transform: 'scale(.9)', transition: 'opacity .7s ease, transform .7s ease' }}
         >
-          <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="#ededf0" strokeWidth="1" opacity={0.1} />
-          <polyline points="0,-44 38,-22 38,22 0,44" fill="none" stroke="#00d4ff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="0,-44 -38,-22" fill="none" stroke="#00d4ff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
-          <polyline points="-38,22 0,44" fill="none" stroke="#00d4ff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
-          <polyline points="-38,-22 -38,22" fill="none" stroke="#00d4ff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.12} />
-          <line x1="0" y1="-44" x2="38" y2="22" stroke="#00d4ff" strokeWidth="1.2" opacity={0.25} />
-          <line x1="0" y1="-44" x2="0" y2="44" stroke="#00d4ff" strokeWidth="1.2" opacity={0.18} />
-          <line x1="38" y1="-22" x2="-38" y2="22" stroke="#00d4ff" strokeWidth="1.2" opacity={0.12} />
-          <circle cx="0" cy="-44" r="4.5" fill="#00d4ff" />
-          <circle cx="38" cy="-22" r="4.5" fill="#00d4ff" />
-          <circle cx="38" cy="22" r="4.5" fill="#00d4ff" />
-          <circle cx="0" cy="44" r="4.5" fill="#00d4ff" />
-          <circle cx="-38" cy="-22" r="4.5" fill="#00d4ff" opacity={0.22} />
-          <circle cx="-38" cy="22" r="4.5" fill="#00d4ff" opacity={0.22} />
-          <circle cx="0" cy="0" r="9" fill="none" stroke="#00d4ff" strokeWidth="2" opacity={0.4} />
-          <circle cx="0" cy="0" r="4" fill="#00d4ff" />
+          <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="#FAF9FF" strokeWidth="1" opacity={0.1} />
+          <polyline points="0,-44 38,-22 38,22 0,44" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="0,-44 -38,-22" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
+          <polyline points="-38,22 0,44" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.25} />
+          <polyline points="-38,-22 -38,22" fill="none" stroke="#7C3AED" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity={0.12} />
+          <line x1="0" y1="-44" x2="38" y2="22" stroke="#7C3AED" strokeWidth="1.2" opacity={0.25} />
+          <line x1="0" y1="-44" x2="0" y2="44" stroke="#7C3AED" strokeWidth="1.2" opacity={0.18} />
+          <line x1="38" y1="-22" x2="-38" y2="22" stroke="#7C3AED" strokeWidth="1.2" opacity={0.12} />
+          <circle cx="0" cy="-44" r="4.5" fill="#7C3AED" />
+          <circle cx="38" cy="-22" r="4.5" fill="#7C3AED" />
+          <circle cx="38" cy="22" r="4.5" fill="#7C3AED" />
+          <circle cx="0" cy="44" r="4.5" fill="#7C3AED" />
+          <circle cx="-38" cy="-22" r="4.5" fill="#7C3AED" opacity={0.22} />
+          <circle cx="-38" cy="22" r="4.5" fill="#7C3AED" opacity={0.22} />
+          <circle cx="0" cy="0" r="9" fill="none" stroke="#D946EF" strokeWidth="2" opacity={0.4} />
+          <circle cx="0" cy="0" r="4" fill="#D946EF" />
         </svg>
-        <div className="loader-logo" id="loader-logo">Vetta<em>.</em></div>
+        <div className="loader-logo" id="loader-logo">VETTA<em>.</em></div>
       </div>
       <div className="loader-tagline" id="loader-tagline">Ecossistema Tech Completo</div>
       <div className="loader-ring-wrap" id="loader-ring">
@@ -101,41 +99,4 @@ export default function Loader() {
       </div>
     </div>
   )
-}
-
-// Typewriter — defined outside component, called after loader hides
-function startTypewriter() {
-  const pairs = [
-    { art: 'o', word: 'site' },
-    { art: 'o', word: 'sistema' },
-    { art: 'a', word: 'infra' },
-    { art: 'a', word: 'automação' },
-    { art: 'o', word: 'software' },
-  ]
-  const twEl = document.getElementById('tw-word')
-  const twArt = document.getElementById('tw-article')
-  if (!twEl || !twArt) return
-  let wi = 0
-  const TYPE_SPEED = 60, DELETE_SPEED = 40, PAUSE = 1800
-
-  function typewriter() {
-    if (!twEl || !twArt) return
-    const next = pairs[(wi + 1) % pairs.length]
-    const current = twEl.textContent ?? ''
-    let i = current.length
-    const del = setInterval(() => {
-      twEl.textContent = current.slice(0, --i)
-      if (i <= 0) {
-        clearInterval(del)
-        wi = (wi + 1) % pairs.length
-        twArt.textContent = next.art
-        let j = 0
-        const typ = setInterval(() => {
-          twEl.textContent = next.word.slice(0, ++j)
-          if (j >= next.word.length) { clearInterval(typ); setTimeout(typewriter, PAUSE) }
-        }, TYPE_SPEED)
-      }
-    }, DELETE_SPEED)
-  }
-  setTimeout(typewriter, PAUSE)
 }

@@ -5,9 +5,9 @@ export default function Nav() {
   return (
     <nav id="nav">
       <Link href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-        <LogoEmblem size={26} color="var(--cyan)" />
-        <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: '20px', color: 'var(--text)' }}>
-          Vetta<em style={{ fontStyle: 'normal', color: 'var(--cyan)' }}>.</em>
+        <LogoEmblem size={26} color="var(--v600)" />
+        <span style={{ fontFamily: "var(--font-syncopate, 'Syncopate'), sans-serif", fontSize: '16px', color: 'var(--white)', letterSpacing: '.06em', textTransform: 'uppercase' as const }}>
+          Vetta<em style={{ fontStyle: 'normal', color: 'var(--v600)' }}>.</em>
         </span>
       </Link>
       <ul className="nav-links">

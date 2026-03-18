@@ -1,67 +1,65 @@
 export default function Hero() {
   return (
     <section id="hero">
-      <div className="px-1 px-layer" id="px1" />
-      <div className="px-2 px-layer" id="px2" />
-      <div className="px-3 px-layer" id="px3" />
-      <div className="hero-grid" />
+      {/* Video de fundo */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      </video>
 
-      <div className="hero-left">
-        <div className="hero-eyebrow r">
-          <div className="h-dot" />
-          <span>Ecossistema Tech Completo</span>
-        </div>
-        <h1 className="r" data-d="1">
-          D<span id="tw-article">o</span>{' '}
-          <span className="tw-wrap">
-            <span className="tw-word" id="tw-word">site</span>
-            <span className="tw-cursor" />
+      {/* Overlay com gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#06041A]/60 via-[#06041A]/80 to-[#06041A]" />
+
+      {/* Radial glow no centro */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                    w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse, rgba(124,58,237,0.25) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Conteúdo */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6">
+        <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] mb-6">
+          Ecossistema Tech Completo
+        </span>
+        <h1 className="font-display font-bold text-5xl md:text-7xl tracking-[0.1em] text-[#FAF9FF] mb-6 leading-tight">
+          DO SITE AO<br />
+          <span className="bg-gradient-to-r from-[#A78BFA] to-[#D946EF] bg-clip-text text-transparent">
+            SERVIDOR,
           </span>
-          <br />ao servidor,<br /><em>tudo junto.</em>
+          <br />
+          TUDO JUNTO.
         </h1>
-        <p className="hero-sub r" data-d="2">
+        <p className="font-body font-light text-lg text-[#9488C5] max-w-xl mb-10">
           A Vetta é o parceiro técnico que sua empresa precisa para crescer sem travar.
-          Sites, sistemas, infraestrutura e estratégia — em um único lugar.
         </p>
-        <div className="hero-ctas r" data-d="3">
-          <a href="https://wa.me/5573982330065" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Agendar diagnóstico gratuito
+        <div className="flex gap-4">
+          <a
+            href="https://wa.me/5573982330065"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-[#7C3AED] hover:bg-[#8B5CF6] text-white font-semibold
+                       rounded-lg transition-all duration-200 font-body"
+          >
+            Agendar diagnóstico
           </a>
-          <a href="#servicos" className="btn-ghost" style={{ color: 'var(--amber)' }}>
-            Ver soluções <span className="arr">→</span>
+          <a
+            href="#servicos"
+            className="px-8 py-3 border border-[rgba(124,58,237,0.38)] text-[#C4B5FD]
+                       hover:bg-[rgba(124,58,237,0.1)] rounded-lg transition-all duration-200 font-body"
+          >
+            Ver soluções →
           </a>
         </div>
-      </div>
-
-      <div className="hero-right">
-        <div className="hero-visual">
-          <div className="circuit-bg" />
-          <div className="fc fc-1">
-            <div className="fc-label">Experiência</div>
-            <div className="fc-val"><span>7+</span> anos</div>
-            <div className="fc-sub">Em desenvolvimento de software</div>
-          </div>
-          <div className="fc fc-2">
-            <div className="fc-label">Uptime garantido</div>
-            <div className="fc-val"><span>99.9</span>%</div>
-            <div className="fc-sub">Infraestrutura monitorada</div>
-          </div>
-          <div className="fc fc-3">
-            <div className="fc-label">Stacks dominadas</div>
-            <div className="fc-val"><span>14</span>+</div>
-            <div className="fc-sub">Do front ao servidor</div>
-          </div>
-          <div className="fc fc-4">
-            <div className="fc-label">Clientes atendidos</div>
-            <div className="fc-val"><span>100</span>+</div>
-            <div className="fc-sub">Empresas e agências</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="hero-scroll">
-        <div className="sc-line" />
-        <span>scroll</span>
       </div>
     </section>
   )

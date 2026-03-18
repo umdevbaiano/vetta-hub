@@ -6,6 +6,7 @@ import Nav from '@/components/Nav'
 import Hero from '@/components/sections/Hero'
 import Ecossistema from '@/components/sections/Ecossistema'
 import Servicos from '@/components/sections/Servicos'
+import Cases from '@/components/sections/Cases'
 import ComoFunciona from '@/components/sections/ComoFunciona'
 import SobreTeaser from '@/components/sections/SobreTeaser'
 import ParaQuem from '@/components/sections/ParaQuem'
@@ -50,12 +51,6 @@ export default function Home() {
         requestAnimationFrame(() => {
           const y = window.scrollY
           document.getElementById('nav')?.classList.toggle('sc', y > 20)
-          const px1 = document.getElementById('px1')
-          const px2 = document.getElementById('px2')
-          const px3 = document.getElementById('px3')
-          if (px1) px1.style.transform = `translateY(${y * .28}px)`
-          if (px2) px2.style.transform = `translateY(${y * .18}px)`
-          if (px3) px3.style.transform = `translateY(${y * .35}px)`
           scrollTicking = false
         })
       }
@@ -86,6 +81,7 @@ export default function Home() {
         <Hero />
         <Ecossistema />
         <Servicos />
+        <Cases />
         <ComoFunciona />
         <SobreTeaser />
         <ParaQuem />
