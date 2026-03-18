@@ -7,16 +7,31 @@ export default function Stats() {
   ]
 
   return (
-    <section className="py-20 border-y border-[rgba(124,58,237,0.12)]">
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section style={{
+      padding: '80px 24px',
+      borderTop: '1px solid rgba(124,58,237,0.12)',
+      borderBottom: '1px solid rgba(124,58,237,0.12)',
+      background: '#06041A',
+    }}>
+      <div style={{
+        maxWidth: '1000px', margin: '0 auto',
+        display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '32px', textAlign: 'center',
+      }} className="stats-grid">
         {stats.map(({ num, label }) => (
           <div key={label}>
-            <div className="font-display font-bold text-5xl md:text-6xl bg-gradient-to-b from-[#FAF9FF] to-[#9488C5] bg-clip-text text-transparent mb-2">
-              {num}
-            </div>
-            <div className="font-mono text-[11px] tracking-[0.15em] uppercase text-[#5B5080]">
-              {label}
-            </div>
+            <div style={{
+              fontFamily: "var(--font-display, 'Syncopate', sans-serif)",
+              fontWeight: 700, fontSize: 'clamp(32px, 5vw, 56px)',
+              background: 'linear-gradient(to bottom, #FAF9FF, #9488C5)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+              marginBottom: '8px',
+            }}>{num}</div>
+            <div style={{
+              fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+              fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#5B5080',
+            }}>{label}</div>
           </div>
         ))}
       </div>

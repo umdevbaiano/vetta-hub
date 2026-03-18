@@ -1,69 +1,118 @@
 export default function InfraVisual() {
   return (
-    <section id="infra-visual" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="infra-visual" style={{
+      padding: '120px 24px',
+      background: 'linear-gradient(to bottom, #06041A, #0D0A28)',
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="infra-row" style={{
+          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+          alignItems: 'center',
+        }}>
           <div>
-            <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#D946EF] mb-4">Infraestrutura & NOC</p>
-            <h2 className="font-display font-bold text-3xl md:text-4xl tracking-[0.06em] text-[#FAF9FF] mb-6 leading-tight">
-              SISTEMAS QUE NÃO PODEM <span className="text-[#A78BFA]">CAIR.</span>
+            <p style={{
+              fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+              fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase',
+              color: '#D946EF', marginBottom: '16px',
+            }}>Infraestrutura & NOC</p>
+            <h2 style={{
+              fontFamily: "var(--font-display, 'Syncopate', sans-serif)",
+              fontWeight: 700, fontSize: 'clamp(24px, 3.5vw, 40px)',
+              letterSpacing: '0.06em', color: '#FAF9FF',
+              marginBottom: '24px', lineHeight: 1.15,
+            }}>
+              SISTEMAS QUE NÃO PODEM <span style={{ color: '#A78BFA' }}>CAIR.</span>
             </h2>
-            <p className="font-body font-light text-[#9488C5] leading-relaxed mb-8 text-lg">
-              Monitoramento ativo 24/7 com Zabbix e Grafana. Identificamos gargalos antes que o problema chegue ao seu cliente.
+            <p style={{
+              fontFamily: "var(--font-body, 'Exo 2', sans-serif)",
+              fontWeight: 300, fontSize: '16px', color: '#9488C5',
+              lineHeight: 1.7, marginBottom: '32px',
+            }}>
+              Monitoramento ativo 24/7 com Zabbix e Grafana.
+              Identificamos gargalos antes que o problema chegue ao seu cliente.
             </p>
 
             {/* Status indicator */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="relative w-2.5 h-2.5">
-                <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75" />
-                <div className="relative rounded-full w-2.5 h-2.5 bg-green-400" />
-              </div>
-              <span className="font-mono text-xs text-green-400 tracking-wider">SISTEMA OPERACIONAL</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
+              <div className="ping-dot" style={{
+                position: 'relative', width: '8px', height: '8px',
+                borderRadius: '50%', background: '#28c840',
+              }} />
+              <span style={{
+                fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                fontSize: '12px', color: '#28c840', letterSpacing: '0.08em',
+              }}>SISTEMA OPERACIONAL</span>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {['Zabbix', 'Grafana', '24/7 NOC', 'Alertas automáticos'].map(c => (
-                <span key={c} className="font-mono text-[11px] px-3 py-1.5 rounded border border-[rgba(124,58,237,0.25)] text-[#9488C5]">
-                  {c}
-                </span>
+                <span key={c} style={{
+                  fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                  fontSize: '11px', padding: '6px 12px', borderRadius: '6px',
+                  border: '1px solid rgba(124,58,237,0.25)', color: '#9488C5',
+                }}>{c}</span>
               ))}
             </div>
           </div>
 
           {/* Uptime panel */}
-          <div className="bg-[#0D0A28] rounded-2xl border border-[rgba(124,58,237,0.2)] p-6 shadow-[0_0_60px_rgba(124,58,237,0.06)]">
-            <div className="flex justify-between items-center mb-4">
-              <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-[#5B5080]">Uptime — últimos 30 dias</span>
-              <span className="font-mono text-sm font-bold text-[#7C3AED]">99.9%</span>
+          <div style={{
+            background: '#0D0A28', borderRadius: '16px',
+            border: '1px solid rgba(124,58,237,0.2)',
+            padding: '24px', boxShadow: '0 0 60px rgba(124,58,237,0.06)',
+          }}>
+            <div style={{
+              display: 'flex', justifyContent: 'space-between',
+              alignItems: 'center', marginBottom: '16px',
+            }}>
+              <span style={{
+                fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#5B5080',
+              }}>Uptime — últimos 30 dias</span>
+              <span style={{
+                fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                fontSize: '14px', fontWeight: 700, color: '#7C3AED',
+              }}>99.9%</span>
             </div>
 
-            <div className="flex items-end gap-0.5 h-16 mb-2">
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '2px', height: '56px', marginBottom: '8px' }}>
               {Array.from({ length: 30 }).map((_, i) => {
                 const h = 85 + Math.floor(Math.sin(i * 0.7) * 10 + 5)
-                return (
-                  <div key={i} className="flex-1 rounded-sm bg-[#7C3AED]"
-                    style={{ height: `${h}%`, opacity: 0.5 + (i/30)*0.5 }} />
-                )
+                return <div key={i} style={{
+                  flex: 1, borderRadius: '2px', background: '#7C3AED',
+                  height: `${h}%`, opacity: 0.4 + (i / 30) * 0.6,
+                }} />
               })}
             </div>
 
-            <div className="flex justify-between font-mono text-[9px] text-[#5B5080] mb-6">
+            <div style={{
+              display: 'flex', justifyContent: 'space-between',
+              fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+              fontSize: '9px', color: '#5B5080', marginBottom: '24px',
+            }}>
               <span>1 Mar</span><span>30 Mar</span>
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
-              <div className="bg-[rgba(124,58,237,0.08)] rounded-lg p-3">
-                <div className="font-mono text-[9px] uppercase tracking-wider text-[#5B5080] mb-1">MTTR</div>
-                <div className="font-mono text-base font-bold text-[#FAF9FF]">&lt;2min</div>
-              </div>
-              <div className="bg-[rgba(124,58,237,0.08)] rounded-lg p-3">
-                <div className="font-mono text-[9px] uppercase tracking-wider text-[#5B5080] mb-1">Alertas/dia</div>
-                <div className="font-mono text-base font-bold text-[#D946EF]">0</div>
-              </div>
-              <div className="bg-[rgba(124,58,237,0.08)] rounded-lg p-3">
-                <div className="font-mono text-[9px] uppercase tracking-wider text-[#5B5080] mb-1">Servidores</div>
-                <div className="font-mono text-base font-bold text-[#A78BFA]">24</div>
-              </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+              {[
+                { label: 'MTTR', val: '<2min', color: '#FAF9FF' },
+                { label: 'Alertas/dia', val: '0', color: '#D946EF' },
+                { label: 'Servidores', val: '24', color: '#A78BFA' },
+              ].map(s => (
+                <div key={s.label} style={{
+                  background: 'rgba(124,58,237,0.08)', borderRadius: '10px', padding: '12px',
+                }}>
+                  <div style={{
+                    fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                    fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.1em',
+                    color: '#5B5080', marginBottom: '4px',
+                  }}>{s.label}</div>
+                  <div style={{
+                    fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
+                    fontSize: '16px', fontWeight: 700, color: s.color,
+                  }}>{s.val}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
