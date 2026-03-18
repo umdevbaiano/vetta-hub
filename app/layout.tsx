@@ -25,9 +25,6 @@ const jetbrains = JetBrains_Mono({
 
 import CustomCursor from '@/components/CustomCursor'
 import WhatsAppButton from '@/components/WhatsAppButton'
-
-import CustomCursor from '@/components/CustomCursor'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import RevealProvider from '@/components/RevealProvider'
 
 export const metadata: Metadata = {

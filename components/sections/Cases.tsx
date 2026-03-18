@@ -181,7 +181,6 @@ export default function Cases() {
         </div>
       </div>
     </section>
-    </section>
   )
 }
 
