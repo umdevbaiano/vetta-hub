@@ -43,14 +43,15 @@ export default function Servicos() {
           gridTemplateColumns: 'repeat(12, 1fr)',
           gap: '16px',
         }}>
-          {services.map((svc) => (
+          {services.map((svc, index) => (
             <a
               key={svc.num}
               href="https://wa.me/5573982330065"
               target="_blank"
               rel="noopener noreferrer"
-              className="bento-card"
+              className={`bento-card r`}
               style={{
+                transitionDelay: `${index * 0.1}s`,
                 gridColumn: svc.wide ? 'span 12' : 'span 12',
                 position: 'relative',
                 background: '#151130',

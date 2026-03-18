@@ -1,3 +1,7 @@
+'use client'
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+
 export default function Cases() {
   const pill = (t: string) => (
     <span key={t} style={{
@@ -30,7 +34,7 @@ export default function Cases() {
         </div>
 
         {/* Case 1 — NF-e */}
-        <div className="case-row" style={{
+        <div className="case-row r" style={{
           display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
           alignItems: 'center', paddingBottom: '80px',
           borderBottom: '1px solid rgba(124,58,237,0.12)',
@@ -78,22 +82,15 @@ export default function Cases() {
             </div>
             <div style={{
               fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
-              fontSize: '13px', lineHeight: 1.8,
+              fontSize: '13px', lineHeight: 1.8, position: 'relative'
             }}>
-              <div><span style={{ color: '#D946EF' }}>POST</span> <span style={{ color: '#FAF9FF' }}>/api/nfe/emitir</span></div>
-              <div style={{ color: '#5B5080' }}>{'{'}</div>
-              <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;cnpj&quot;: <span style={{ color: '#A78BFA' }}>&quot;65.434.389/0001-29&quot;</span>,</div>
-              <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;valor&quot;: <span style={{ color: '#A78BFA' }}>3000.00</span>,</div>
-              <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;status&quot;: <span style={{ color: '#28c840' }}>&quot;AUTORIZADA&quot;</span></div>
-              <div style={{ color: '#5B5080' }}>{'}'}</div>
-              <div style={{ marginTop: '12px', color: '#28c840' }}>✓ NF-e 000.001.234 emitida com sucesso</div>
-              <div style={{ color: '#5B5080', fontSize: '11px' }}>Tempo de resposta: <span style={{ color: '#A78BFA' }}>312ms</span></div>
+              <TerminalContent />
             </div>
           </div>
         </div>
 
         {/* Case 2 — Insane App (invertido) */}
-        <div className="case-row case-row-reverse" style={{
+        <div className="case-row case-row-reverse r" style={{
           display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
           alignItems: 'center', paddingTop: '80px',
         }}>
@@ -184,5 +181,92 @@ export default function Cases() {
         </div>
       </div>
     </section>
+    </section>
+  )
+}
+
+function TerminalContent() {
+  const [step, setStep] = useState(0)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && step === 0) setStep(1)
+      },
+      { threshold: 0.5 }
+    )
+    const tel = document.getElementById('terminal-trigger')
+    if (tel) observer.observe(tel)
+    return () => observer.disconnect()
+  }, [step])
+
+  useEffect(() => {
+    if (step === 1) {
+      const t = setTimeout(() => setStep(2), 600)
+      return () => clearTimeout(t)
+    }
+    if (step === 2) {
+      const t = setTimeout(() => setStep(3), 800)
+      return () => clearTimeout(t)
+    }
+    if (step === 3) {
+      // Loop the animation
+      const t = setTimeout(() => setStep(0), 4000)
+      return () => clearTimeout(t)
+    }
+  }, [step])
+
+  return (
+    <div id="terminal-trigger" style={{ minHeight: '160px' }}>
+      {step >= 1 && (
+        <div className="typing-line">
+          <span style={{ color: '#D946EF' }}>POST</span>{' '}
+          <span style={{ color: '#FAF9FF' }}>/api/nfe/emitir</span>
+        </div>
+      )}
+      
+      {step >= 2 && (
+        <>
+          <div style={{ color: '#5B5080' }}>{'{'}</div>
+          <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;cnpj&quot;: <span style={{ color: '#A78BFA' }}>&quot;65.434.389/0001-29&quot;</span>,</div>
+          <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;valor&quot;: <span style={{ color: '#A78BFA' }}>3000.00</span>,</div>
+          <div style={{ color: '#5B5080', paddingLeft: '16px' }}>&quot;status&quot;: <span style={{ color: '#28c840' }}>&quot;AUTORIZADA&quot;</span></div>
+          <div style={{ color: '#5B5080' }}>{'}'}</div>
+        </>
+      )}
+
+      {step >= 3 && (
+        <div className="fade-in">
+          <div style={{ marginTop: '12px', color: '#28c840' }}>✓ NF-e 000.001.234 emitida com sucesso</div>
+          <div style={{ color: '#5B5080', fontSize: '11px' }}>Tempo de resposta: <span style={{ color: '#A78BFA' }}>312ms</span></div>
+        </div>
+      )}
+
+      {/* Typing cursor */}
+      {step < 3 && (
+        <div style={{
+          display: 'inline-block',
+          width: '8px', height: '14px',
+          background: '#FAF9FF',
+          marginLeft: '4px',
+          animation: 'blink 1s step-end infinite',
+          verticalAlign: 'middle',
+        }} />
+      )}
+      
+      <style>{`
+        @keyframes blink { 50% { opacity: 0; } }
+        .typing-line {
+          overflow: hidden;
+          white-space: nowrap;
+          border-right: 2px solid transparent;
+          width: 0;
+          animation: typing 0.5s steps(30, end) forwards;
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        .fade-in { animation: fadeIn 0.4s ease-in forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: translateY(0) } }
+      `}</style>
+    </div>
   )
 }

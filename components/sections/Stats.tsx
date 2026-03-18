@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function Stats() {
   const stats = [
     { num: '7+', label: 'Anos no mercado' },
@@ -18,8 +20,8 @@ export default function Stats() {
         display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '32px', textAlign: 'center',
       }} className="stats-grid">
-        {stats.map(({ num, label }) => (
-          <div key={label}>
+        {stats.map(({ num, label }, index) => (
+          <div key={label} className="r" style={{ transitionDelay: `${index * 0.15}s` }}>
             <div style={{
               fontFamily: "var(--font-display, 'Syncopate', sans-serif)",
               fontWeight: 700, fontSize: 'clamp(32px, 5vw, 56px)',

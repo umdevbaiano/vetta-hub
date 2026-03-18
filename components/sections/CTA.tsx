@@ -1,10 +1,33 @@
+import React from 'react'
+import Image from 'next/image'
+
 export default function CTA() {
   return (
     <section id="contato" style={{
-      padding: '120px 24px',
+      padding: '160px 24px',
       background: 'linear-gradient(to bottom, #151130, #06041A)',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+      {/* Background glowing orb image */}
+      <div style={{
+        position: 'absolute', top: '50%', left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '800px', height: '800px',
+        opacity: 0.25,
+        pointerEvents: 'none',
+        mixBlendMode: 'screen',
+        zIndex: 0
+      }}>
+        <Image 
+          src="/images/premium_network_orb.png" 
+          alt="Abstract tech orb" 
+          fill 
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
+
+      <div className="r" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <p style={{
           fontFamily: "var(--font-mono, 'JetBrains Mono', monospace)",
           fontSize: '10px', letterSpacing: '0.22em', textTransform: 'uppercase',

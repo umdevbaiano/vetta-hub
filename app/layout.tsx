@@ -23,6 +23,13 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 })
 
+import CustomCursor from '@/components/CustomCursor'
+import WhatsAppButton from '@/components/WhatsAppButton'
+
+import CustomCursor from '@/components/CustomCursor'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import RevealProvider from '@/components/RevealProvider'
+
 export const metadata: Metadata = {
   title: 'Vetta Hub — Ecossistema Tech Completo',
   description: 'Do site ao servidor, tudo junto. A Vetta é o parceiro técnico que sua empresa precisa para crescer sem travar.',
@@ -40,7 +47,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${syncopate.variable} ${exo2.variable} ${jetbrains.variable}`}>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        <RevealProvider>
+          {children}
+        </RevealProvider>
+        <WhatsAppButton />
+      </body>
     </html>
   )
 }
