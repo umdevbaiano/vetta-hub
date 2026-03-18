@@ -5,21 +5,21 @@ import './globals.css'
 const syncopate = Syncopate({
   subsets: ['latin'],
   weight: ['400', '700'],
-  variable: '--font-syncopate',
+  variable: '--font-display',
   display: 'swap',
 })
 
 const exo2 = Exo_2({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-exo2',
+  variable: '--font-body',
   display: 'swap',
 })
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-  variable: '--font-jetbrains',
+  variable: '--font-mono',
   display: 'swap',
 })
 

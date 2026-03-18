@@ -1,3 +1,5 @@
+import React from 'react';
+
 const services = [
   { num: '01', title: 'SOFTWARE SOB MEDIDA', desc: 'ERPs, portais, automações e sistemas internos construídos para a sua regra de negócio. Nenhum template, zero gambiarra.', icon: 'code', wide: true },
   { num: '04', title: 'INFRAESTRUTURA & NOC', desc: 'Servidores, redes e monitoramento 24/7. Identificamos o problema antes que você perceba.', icon: 'server', status: true },
@@ -6,7 +8,7 @@ const services = [
   { num: '05', title: 'CONSULTORIA', desc: 'Diagnóstico honesto. Plano de ação claro. Sem PowerPoint.', icon: 'chat' },
 ]
 
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, React.JSX.Element> = {
   code: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
   server: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg>,
   globe: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>,
