@@ -72,16 +72,16 @@ export default function Cases() {
             </div>
             <div className="flex gap-3 mb-3">
               <div className="flex-1 bg-[#151130] rounded p-2 border border-[rgba(124,58,237,0.12)]">
-                <div className="text-[#5B5080] text-[10px] uppercase tracking-wider mb-1">Projetos Ativos</div>
-                <div className="text-[#7C3AED] text-lg font-bold">12</div>
+                <div className="text-[#5B5080] text-[10px] uppercase tracking-wider mb-1">Usuários</div>
+                <div className="text-[#7C3AED] text-lg font-bold">2.4k</div>
+              </div>
+              <div className="flex-1 bg-[#151130] rounded p-2 border border-[rgba(124,58,237,0.12)]">
+                <div className="text-[#5B5080] text-[10px] uppercase tracking-wider mb-1">Treinos/dia</div>
+                <div className="text-[#FAF9FF] text-lg font-bold">380</div>
               </div>
               <div className="flex-1 bg-[#151130] rounded p-2 border border-[rgba(124,58,237,0.12)]">
                 <div className="text-[#5B5080] text-[10px] uppercase tracking-wider mb-1">Uptime</div>
-                <div className="text-[#FAF9FF] text-lg font-bold">99.9%</div>
-              </div>
-              <div className="flex-1 bg-[#151130] rounded p-2 border border-[rgba(124,58,237,0.12)]">
-                <div className="text-[#5B5080] text-[10px] uppercase tracking-wider mb-1">No prazo</div>
-                <div className="text-[#D946EF] text-lg font-bold">100%</div>
+                <div className="text-[#D946EF] text-lg font-bold">99.9%</div>
               </div>
             </div>
             <div className="bg-[#151130] rounded p-2 border border-[rgba(124,58,237,0.12)] flex items-end gap-1 h-12">
@@ -103,14 +103,16 @@ export default function Cases() {
               Cliente externo
             </span>
             <h3 className="font-display font-bold text-2xl tracking-wider text-[#FAF9FF] mb-4 uppercase">
-              PORTAL DE GESTÃO INTEGRADO
+              INSANE APP
             </h3>
             <p className="font-body font-light text-[#9488C5] leading-relaxed mb-6">
-              Dashboard completo para gestão de projetos e acompanhamento em tempo real.
-              Integração com múltiplos serviços via API REST.
+              Rede social e plataforma de acompanhamento de treinos focada em comunidade fitness.
+              Backend completo com feed social, sistema de autenticação, tracking de treinos,
+              perfis de atletas e integração com app mobile. Arquitetura orientada a performance
+              com cache distribuído para suportar crescimento acelerado de usuários.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Vercel'].map((tech) => (
+              {['Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker'].map((tech) => (
                 <span
                   key={tech}
                   className="text-xs font-mono px-3 py-1 border border-[rgba(124,58,237,0.25)] rounded-md text-[#9488C5]"

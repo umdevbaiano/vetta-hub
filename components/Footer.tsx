@@ -10,11 +10,10 @@ export default function Footer() {
             <LogoEmblem size={18} color="var(--v600)" />
             Vetta<em style={{ fontStyle: 'normal', color: 'var(--v600)' }}>.</em>
           </Link>
-          <span className="f-copy">© 2025 VettaHub Tecnologia · Jequié, BA</span>
+          <span className="f-copy">© 2026 VettaHub Tecnologia · Jequié, BA</span>
           <div className="f-links">
-            <a href="/">Instagram</a>
-            <a href="/">LinkedIn</a>
-            <a href="/">GitHub</a>
+            <a href="https://www.linkedin.com/in/samuellmiranda" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/umdevbaiano" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
       </div>
